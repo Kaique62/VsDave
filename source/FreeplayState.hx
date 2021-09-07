@@ -13,9 +13,9 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxStringUtil;
 import lime.utils.Assets;
-
+#if windows
 import Discord.DiscordClient;
-
+#end
 using StringTools;
 
 class FreeplayState extends MusicBeatState
@@ -76,9 +76,9 @@ class FreeplayState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			}
 		 */
-		 
+		#if windows
 		DiscordClient.changePresence("In the Freeplay Menu", null);
-
+		#end
 		var isDebug:Bool = false;
 
 		#if debug

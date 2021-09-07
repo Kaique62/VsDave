@@ -16,7 +16,9 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxStringUtil;
 import lime.utils.Assets;
+#if windows
 import Discord.DiscordClient;
+#end
 using StringTools;
 
 
@@ -65,9 +67,9 @@ class MusicPlayerState extends MusicBeatState
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
-
+        #if windows
         DiscordClient.changePresence("In the OST Menu", null);
-
+        #end
         for (i in 0...songs.length)
         {
             var songText:Alphabet = new Alphabet(0, 0, songs[i].songName + (songs[i].hasVocals ? "" : "-Inst"), true, false);
@@ -134,10 +136,11 @@ class MusicPlayerState extends MusicBeatState
 
         var currentTimeFormatted = FlxStringUtil.formatTime(FlxG.sound.music.time / 1000);
         var lengthFormatted = FlxStringUtil.formatTime(FlxG.sound.music.length / 1000);
+        #if windows
         if (currentlyplaying)
         {
             if (songs[curSelected].hasVocals || songs[curSelected].ExternalSong)
-            {
+            {   
                 DiscordClient.changePresence('In The OST Menu', '\nListening To: ' +
                     formatSongName(songs[curSelected].songName) + ' | ' + 
                     currentTimeFormatted + ' / ' + lengthFormatted,
@@ -152,7 +155,7 @@ class MusicPlayerState extends MusicBeatState
                     null);
             }
         }
-
+        #end
         if (healthBar.percent < 20)
 			iconP1.animation.curAnim.curFrame = 1;
 		else
@@ -197,9 +200,10 @@ class MusicPlayerState extends MusicBeatState
         if (controls.BACK)
         {
             if (currentlyplaying)
-            {
+            {   
+                #if windows
                 DiscordClient.changePresence('In The OST Menu', null);
-                
+                #end
                 if (CurVocals != null)
                 {
                     CurVocals.stop();

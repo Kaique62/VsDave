@@ -24,8 +24,9 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.misc.ColorTween;
 import flixel.util.FlxStringUtil;
 import lime.utils.Assets;
+#if windows
 import Discord.DiscordClient;
-
+#end
 using StringTools;
 /*
 hi cool lil committers looking at this code, 95% of this is my code and I'd appreciate if you didn't steal it without asking for my permission
@@ -170,8 +171,9 @@ class CreditsMenuState extends MusicBeatState
 
 	override function create()
 	{
+      #if windows
       DiscordClient.changePresence("In the Credits Menu", null);
-
+      #end
       mainCam.bgColor.alpha = 0;
       selectPersonCam.bgColor.alpha = 0;
       FlxG.cameras.reset(mainCam);
