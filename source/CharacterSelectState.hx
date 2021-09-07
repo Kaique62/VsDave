@@ -116,6 +116,11 @@ class CharacterSelectState extends MusicBeatState
 		characterText.fieldWidth = 1080;
 		characterText.alignment = FlxTextAlign.CENTER;
 		add(characterText);
+
+		#if mobileC
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 	}
 
 

@@ -253,7 +253,9 @@ class CreditsMenuState extends MusicBeatState
          var scaledY = FlxMath.remapToRange(creditsText.selectionId, 0, 1, 0, 1.3);
          creditsText.text.y = scaledY * 75 + (FlxG.height * 0.5);
       }
-
+		#if mobileC
+		addVirtualPad(LEFT_RIGHT, A_B);
+		#end
 		super.create();
 	}
    

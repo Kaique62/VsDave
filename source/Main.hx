@@ -63,6 +63,12 @@
 				gameHeight = Math.ceil(stageHeight / zoom);
 			}
 
+			#if mobile
+			gameWidth = 1280;
+			gameHeight = 720;
+			zoom = 1;
+			#end
+
 			#if !debug
 			initialState = TitleState;
 			#end
