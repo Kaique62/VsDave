@@ -294,6 +294,51 @@ class Character extends FlxSprite
 			   antialiasing = false;
 		
 				playAnim('idle');
+
+			case 'mad-bamber':
+				// BAMBI SHITE ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('bambi/mad_guy');
+				frames = tex;
+				animation.addByPrefix('idle', 'IDLE', 24, false);
+				animation.addByPrefix('singUP', 'UP', 24, false);
+				animation.addByPrefix('singRIGHT', 'RIGHT', 24, false);
+				animation.addByPrefix('singDOWN', 'DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'LEFT', 24, false);
+		
+				addOffset("idle", -82,-447);
+				addOffset("singUP", -32, -443);
+				addOffset("singRIGHT", -32, -456);
+				addOffset("singLEFT", 90, -444);
+				addOffset("singDOWN", -10, -456);
+			   updateHitbox();
+			   antialiasing = false;
+		
+				playAnim('idle');
+
+
+			case 'bardu':
+				// BAMBI SHITE ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('bambi/Bardu');
+				frames = tex;
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
+		
+				addOffset('idle');
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 0, 0);
+				addOffset("singDOWN", 0, 0);
+				globaloffset[0] = 150;
+				globaloffset[1] = 450; //this is the y
+				setGraphicSize(Std.int(width / furiosityScale));
+			   updateHitbox();
+			   antialiasing = false;
+		
+				playAnim('idle');
+
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('spooky_kids_assets');
 				frames = tex;
