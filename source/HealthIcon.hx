@@ -38,7 +38,6 @@ class HealthIcon extends FlxSprite
 		animation.add('dave-angey', [26, 27], 0, false, isPlayer);
 		animation.add('bambi', [28, 29], 0, false, isPlayer);
 		animation.add('bambi-splitathon', [28, 29], 0, false, isPlayer);
-
 		animation.add('bambi-new', [28, 29], 0, false, isPlayer);
 		animation.add('the-duo', [32, 33], 0, false, isPlayer);
 		animation.add('bambi-stupid', [34, 35], 0, false, isPlayer);
@@ -51,6 +50,8 @@ class HealthIcon extends FlxSprite
 		animation.add('tristan-golden', [38, 39], 0, false, isPlayer);
 		animation.add('bambi-angey', [40, 41], 0, false, isPlayer);
 		animation.add('dave-old', [42, 43], 0, false, isPlayer);
+		animation.add('bardu', [44, 45], 0, false, isPlayer);
+		animation.add('mad-bamber', [46, 47], 0, false, isPlayer);
 		animation.play(char);
 		if (char == 'dave-angey' || char == 'bambi-3d' || char == 'senpai' || char == 'bf-pixel' || char == 'spirit' || char == 'senpai-angry')
 		{
